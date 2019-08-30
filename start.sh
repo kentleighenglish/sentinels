@@ -1,4 +1,0 @@
-
-source './.env'
-
-node index;

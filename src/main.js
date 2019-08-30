@@ -1,7 +1,9 @@
 require('./scss/master.scss');
 
-const init = () => {
-	
-}
+const Twain = require('./twain');
 
-init();
+const App = new Twain({
+	target: '#root'
+});
+
+App.init();

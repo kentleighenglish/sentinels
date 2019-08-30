@@ -7,7 +7,7 @@ module.exports = (env = { NODE_ENV: 'production' }) => {
 	return {
 		mode: envMode,
 		entry: {
-			'app': [ './src/main' ]
+			'app': [ "@babel/polyfill", "./src/main" ]
 		},
 		output: {
 			filename: '[name].js',
