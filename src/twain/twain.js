@@ -63,6 +63,10 @@ class Main {
 
 			this.createDOMSkeleton();
 
+			if (this.options.init) {
+				this.options.init(this);
+			}
+
 			this.tick();
 		});
 	}

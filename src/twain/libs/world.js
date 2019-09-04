@@ -4,7 +4,7 @@ class World {
 	constructor(app) {
 		this.app = app;
 
-		this._superBlocks = {}
+		this._scenes = {}
 
 		this.biomes = {
 
