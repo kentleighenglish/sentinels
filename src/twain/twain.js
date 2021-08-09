@@ -1,10 +1,10 @@
-const World = require('./libs/world');
-const Engine = require('./libs/engine');
-const State = require('./libs/state');
-const UI = require('./libs/ui');
+const World = require("./libs/world");
+const Engine = require("./libs/engine");
+const State = require("./libs/state");
+const UI = require("./libs/ui");
 
 const defaults = {
-	target: 'body'
+	target: "body"
 }
 
 window.debug = (...msgs) => console.log(...msgs);
@@ -30,7 +30,7 @@ class Main {
 
 		this.options = { ...defaults };
 
-		if (options && typeof options === 'object') {
+		if (options && typeof options === "object") {
 			this.options = {
 				...this.options,
 				...options
@@ -47,7 +47,7 @@ class Main {
 
 	init() {
 		errorWrap(() => {
-			debug('App Initialise...');
+			debug("App Initialise...");
 			// Holds data for world objects and procedurally generates world
 			this.world = new World(this);
 			// Renders sprites and updates DOM
@@ -57,7 +57,7 @@ class Main {
 			// Manages user interface and click events
 			this.ui = new UI(this);
 
-			debug('App Started');
+			debug("App Started");
 
 			this.updateTitle();
 
@@ -105,29 +105,29 @@ class Main {
 	 * Update the HTML title
 	 */
 	updateTitle(append) {
-		let el = document.querySelector('title');
+		let el = document.querySelector("title");
 
-		const mainTitle = this.options.title || 'Twain Game';
+		const mainTitle = this.options.title || "Twain Game";
 
 		if (!el) {
-			el = document.createElement('title');
-			document.querySelector('head').appendChild(el);
+			el = document.createElement("title");
+			document.querySelector("head").appendChild(el);
 		}
 
-		el.innerHTML = `${mainTitle} ${append ? ' | ' + append : ''}`;
+		el.innerHTML = `${mainTitle} ${append ? " | " + append : ""}`;
 	}
 
 	/*
 	 * Create the initial DOM skeleton
 	 */
 	createDOMSkeleton() {
-		this.uiContainer = document.createElement('div');
-		this.viewportContainer = document.createElement('div');
+		this.uiContainer = document.createElement("div");
+		this.viewportContainer = document.createElement("div");
 
-		this.container.classList.add('twain');
+		this.container.classList.add("twain");
 
-		this.uiContainer.classList.add('twain__ui');
-		this.viewportContainer.classList.add('twain__viewport');
+		this.uiContainer.classList.add("twain__ui");
+		this.viewportContainer.classList.add("twain__viewport");
 
 		this.container.appendChild(this.uiContainer);
 		this.container.appendChild(this.viewportContainer);

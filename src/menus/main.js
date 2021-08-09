@@ -1,4 +1,4 @@
 
 module.exports = {
-	section: 'toolbar'
+	section: "toolbar"
 }

@@ -3,7 +3,7 @@ const requireAll = r => ({
 	...r.keys().reduce((obj, key) => {
 		return {
 			...obj,
-			[key.replace(/(^.*\/|\..*$)/g, '')]: r(key)
+			[key.replace(/(^.*\/|\..*$)/g, "")]: r(key)
 		}
 	}, {})
 })

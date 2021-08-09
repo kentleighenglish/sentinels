@@ -1,4 +1,4 @@
-const { cloneDeep } = require('lodash');
+const { cloneDeep } = require("lodash");
 
 const initialState = {
 	menus: {},
@@ -21,7 +21,7 @@ class State {
 		const loadState = localStorage.getItem(slotName(slot));
 
 		if (!loadState) {
-			throw new Error('No save found in that save slot');
+			throw new Error("No save found in that save slot");
 		}
 
 		this._setState(JSON.parse(loadState));
@@ -39,7 +39,7 @@ class State {
 			...newState
 		}
 
-		debugGroup('STATE_UPDATED', this._currentState);
+		debugGroup("STATE_UPDATED", this._currentState);
 	}
 
 }

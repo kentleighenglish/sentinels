@@ -1,13 +1,13 @@
-require('./scss/master.scss');
+require("./scss/master.scss");
 
-const Twain = require('./twain/twain');
-const { requireAll } = require('./twain/utils');
+const Twain = require("./twain/twain");
+const { requireAll } = require("./twain/utils");
 
-const quests = requireAll(require.context('./quests', false, /\.(js)$/i));
-const menus = requireAll(require.context('./menus', false, /\.js$/i));
+const quests = requireAll(require.context("./quests", false, /\.(js)$/i));
+const menus = requireAll(require.context("./menus", false, /\.js$/i));
 
-window.queryParams = window.location.search.match(/[^\?\&]+\=?[^\?\&]*/g).reduce((obj, q) => {
-	const split = q.split('=');
+window.queryParams = (window.location.search.match(/[^\?\&]+\=?[^\?\&]*/g) || []).reduce((obj, q) => {
+	const split = q.split("=");
 	const key = split[0];
 	let val = split[1] || "true";
 
@@ -23,21 +23,21 @@ window.queryParams = window.location.search.match(/[^\?\&]+\=?[^\?\&]*/g).reduce
 
 const App = new Twain({
 	title: "The Sentinels",
-	target: '#root',
+	target: "#root",
 	scenes: {
 		world: {
-			type: 'worldspace',
+			type: "worldspace",
 			size: [ 10, 10 ]
 		}
 	},
 	player: {
 		startingPosition: [ 0, 0 ],
-		sprite: 'o',
-		color: '#999999'
+		sprite: "o",
+		color: "#999999"
 	},
 	quests,
 	ui: {
-		defaultMenu: 'main',
+		defaultMenu: "main",
 		menus
 	},
 	init: app => {
@@ -49,7 +49,7 @@ const App = new Twain({
 
 		}
 
-		// app.ui.loadMenu('main');
+		// app.ui.loadMenu("main");
 	}
 });
 

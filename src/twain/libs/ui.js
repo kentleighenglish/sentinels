@@ -5,7 +5,7 @@ class UI {
 		this.app = app;
 		this.container = this.app.uiContainer;
 
-		debug('UI Initialised');
+		debug("UI Initialised");
 	}
 
 	createMenu() {
